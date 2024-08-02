@@ -44,9 +44,22 @@ $(document).ready(function() {
             const endereco = `${logradouro}, ${bairro} - ${cidade} - ${estado}`;
             $('#endereco').val(endereco);
         })
-        setTimeout(function() {
-            $(botao).find('i').removeClass('d-none');
-            $(botao).find('span').addClass('d-none');
-        }, 1000)
+        .catch(function(erro) {
+            alert("Ocorreu um erro ao buscar o endereco, tente procurar novamente mais tarde.")
+        })
+        .finally(function() {
+            setTimeout(function() {
+                $(botao).find('i').removeClass('d-none');
+                $(botao).find('span').addClass('d-none');
+            }, 500)
+        })
+    })
+
+    $('#formulario-pedido').submit(function(evento) {
+        evento.preventDefault();
+        
+        if ($('#nome').val().length == 0) {
+            throw new Error("Digite seu nome");
+        }
     })
 })
