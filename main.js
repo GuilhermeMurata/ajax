@@ -20,22 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
             repos.innerText = json.public_repos;
             linkElement.href = json.html_url;
         })
-})
 
-$(document).ready(function() {
-    $('#celular').mask('(00) 00000-0000');
-    
-    function validarCelular(celular) {
-        if(celular.length > 11) {
-            alert("Enviado!")
-        }
-    }
-
-    $('#form').submit(function(evento) {
-        evento.preventDefault();
         
-        if ($('#celular').val().length == 0) {
-            throw new Error("Digite seu nome");
+    $(document).ready(function() {
+        $('#celular').mask('(00) 00000-0000');
+
+        $('#form').submit(function(evento) {
+            evento.preventDefault();
+        })
+
+        const celular = $('#celular').val();
+        
+        if(celular.length === 11) {
+            alert("Enviado!")
+        } else {
+            alert("Digite o seu número");
         }
     })
 })
