@@ -28,19 +28,22 @@
                     <span id="following"></span>
                 </li>
             </ul>
-            <div class="button">
-                <a href="https://github.com/GuilhermeMurata" class="profile-link">Ver no Github</a>
-                <div class="form" id="form">
-                    <h4 class="entre">Entre em contato:</h4>
-                    <input class="celular-box" type="number" placeholder="Seu celular" id="celular"></input>
-                    <button type="submit" class="send-button bi-send"></button>
+            <form id="formulario-envio">
+                <div class="button">
+                    <a href="https://github.com/GuilhermeMurata" class="profile-link">Ver no Github</a>
+                    <div id="formulario-envio">
+                        <h4 class="entre">Entre em contato:</h4>
+                        <input class="celular-box" type="text" placeholder="Seu celular" id="celular" required></input>
+                        <button type="submit" class="send-button bi-send"></button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </header>
 
     <script src="jquery.js"></script>
     <script src="jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

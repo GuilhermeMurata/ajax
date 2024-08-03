@@ -21,20 +21,23 @@ document.addEventListener('DOMContentLoaded', function() {
             linkElement.href = json.html_url;
         })
 
+        $(document).ready(function() {
+            $('#celular').mask('(00) 00000-0000');
         
-    $(document).ready(function() {
-        $('#celular').mask('(00) 00000-0000');
+            $('#formulario-envio').on("submit", function(evento) {
+                evento.preventDefault();
+        
+                const celular = $('#celular').val().replace(/\D/g, '');
+        
+                if(celular.length === 11) {
+                    alert("Enviado!")
+                } else {
+                    alert("Digite o seu número novamente");
+                }
 
-        $('#form').submit(function(evento) {
-            evento.preventDefault();
+                $('#formulario-envio')[0].reset();
+            })
         })
-
-        const celular = $('#celular').val();
-        
-        if(celular.length === 11) {
-            alert("Enviado!")
-        } else {
-            alert("Digite o seu número");
-        }
-    })
 })
+
+
