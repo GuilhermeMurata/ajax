@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const celular = $('#celular').val().replace(/\D/g, '');
         
                 if(celular.length === 11) {
-                    alert("Enviado!")
+                    alert("Numero enviado com sucesso!")
                 } else {
-                    alert("Digite o seu número novamente");
+                    alert("Verifique se o seu numero contem 11 digitos");
                 }
 
                 $('#formulario-envio')[0].reset();
